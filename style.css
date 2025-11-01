@@ -121,18 +121,6 @@ body {
     font-size: 0.9em;
     font-weight: 500;
 }
-
-/* Iconos de redes sociales específicos */
-.contact-item:nth-child(2):hover { background-color: #25d366; } /* WhatsApp */
-.contact-item:nth-child(3):hover { background-color: #D44638; } /* Email (Google Red) */
-.contact-item:nth-child(4):hover { background-color: #0088cc; } /* Telegram */
-.contact-item:nth-child(5):hover { background-color: #1877f2; } /* Facebook */
-.contact-item:nth-child(6):hover { 
-    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-    color: white;
-    border: none;
-} /* Instagram */
-
 .qr-code {
     padding: 20px;
     margin-top: 20px;
