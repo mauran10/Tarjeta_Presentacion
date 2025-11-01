@@ -171,10 +171,6 @@ body {
     transition: box-shadow 0.2s;
 }
 
-.service-item:hover {
-    box-shadow: 0 5px 15px var(--shadow-color);
-}
-
 .service-icon {
     font-size: 2.2em;
     color: var(--primary-color);
