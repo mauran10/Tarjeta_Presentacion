@@ -6,6 +6,9 @@
     <title>ASCA - Nuestros Servicios</title>
     <link rel="stylesheet" href="style.css"> 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script 
+  src="https://www.paypal.com/sdk/js?client-id=BAACat-63-kgJzsgznwW46TmKWF1xRRjFoh8jzWCc2wHzG75f-e4NnobxP_Ra_ylEKFUFhlMfk0zArRR4U&components=hosted-buttons&disable-funding=venmo&currency=MXN">
+</script>
 </head>
 <body>
     <div class="card-container services-page">
@@ -23,9 +26,14 @@
                 <p class="service-description">Optimización de impuestos, planeación fiscal y cumplimiento normativo para maximizar la rentabilidad.</p>
                 
                 <div class="purchase-button-container">
-                    <a href="#" class="purchase-button">Contratar Servicio</a>
+                    <div id="paypal-container-4TKWYQMAVNCN4"></div>
+                        <script>
+                        paypal.HostedButtons({
+                            hostedButtonId: "4TKWYQMAVNCN4",
+                        }).render("#paypal-container-4TKWYQMAVNCN4")
+                        </script>
+                    </div>
                 </div>
-            </div>
 
             <div class="service-item">
                 <i class="fas fa-book service-icon"></i>
