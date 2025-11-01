@@ -1,0 +1,353 @@
+:root {
+    --primary-color: #007bff; /* Un azul profesional */
+    --secondary-color: #28a745; /* Verde para WhatsApp, etc. */
+    --background-color: #f8f9fa; /* Fondo claro */
+    --card-background: #ffffff; /* Fondo de la tarjeta */
+    --text-color: #343a40; /* Color de texto principal */
+    --light-text-color: #6c757d; /* Color de texto secundario */
+    --border-color: #e9ecef; /* Color de borde sutil */
+    --shadow-color: rgba(0, 0, 0, 0.08); /* Sombra suave */
+}
+
+body {
+    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.card-container {
+    width: 100%;
+    max-width: 400px; /* Ancho máximo para una tarjeta en móvil */
+    background-color: var(--card-background);
+    border-radius: 15px;
+    box-shadow: 0 10px 30px var(--shadow-color);
+    overflow: hidden;
+    text-align: center;
+    padding-bottom: 30px; /* Espacio al final */
+}
+
+.card-header {
+    background-image: url('images/logo_asca.jpg');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    color: white;
+    padding: 30px 20px;
+    height: 100px;
+    width: 100%;
+}
+
+.logo {
+
+    font-size: 1.8em;
+    margin: 0;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.profile-info {
+    padding: 20px 20px;
+    background-color: #929399 ;
+    border-radius: 15px;
+
+}
+
+.name {
+    font-size: 2em;
+    margin: 0 0 5px;
+    color: black;
+    font-weight: 600;
+}
+
+.title {
+    font-size: 1.1em;
+    color: black;
+    margin-top: 0;
+}
+
+.additional-links {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 o 3 columnas */
+    gap: 10px;
+    padding: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.contact-links {
+    background-color: #211e4b;
+    border-radius: 15px;
+    margin: 2px 0px 2px 0px;
+     display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 o 3 columnas */
+    gap: 10px;
+    padding: 20px;
+}
+
+.contact-item, .additional-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 15px 10px;
+    text-decoration: none;
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    background-color: #fefefe;
+}
+
+.contact-item:hover, .additional-item:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.contact-item i, .additional-item i {
+    font-size: 1.8em;
+    margin-bottom: 8px;
+}
+
+.contact-item span, .additional-item span {
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+/* Iconos de redes sociales específicos */
+.contact-item:nth-child(2):hover { background-color: #25d366; } /* WhatsApp */
+.contact-item:nth-child(3):hover { background-color: #D44638; } /* Email (Google Red) */
+.contact-item:nth-child(4):hover { background-color: #0088cc; } /* Telegram */
+.contact-item:nth-child(5):hover { background-color: #1877f2; } /* Facebook */
+.contact-item:nth-child(6):hover { 
+    background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
+    color: white;
+    border: none;
+} /* Instagram */
+
+.qr-code {
+    padding: 20px;
+    margin-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.qr-code img {
+    width: 120px;
+    height: 120px;
+    border: 5px solid var(--card-background);
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    margin-bottom: 10px;
+}
+
+.qr-code p {
+    font-size: 0.9em;
+    color: var(--light-text-color);
+    margin: 0;
+}
+
+
+/* --- ESTILOS ESPECÍFICOS PARA LA PÁGINA DE SERVICIOS --- */
+
+.services-page .card-header {
+    /* Opcional: Si quieres menos espacio en el encabezado de esta página */
+    padding: 20px; 
+    height: auto;
+}
+
+.page-title-section {
+    padding: 10px 20px 0;
+    margin-bottom: 20px;
+}
+
+.services-list {
+    padding: 0 20px;
+    display: grid;
+    gap: 20px; /* Espacio entre los bloques de servicio */
+}
+
+.service-item {
+    text-align: left;
+    padding: 20px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    background-color: var(--card-background);
+    transition: box-shadow 0.2s;
+}
+
+.service-item:hover {
+    box-shadow: 0 5px 15px var(--shadow-color);
+}
+
+.service-icon {
+    font-size: 2.2em;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+    display: block; /* Para centrar el icono si fuera necesario */
+}
+
+.service-name {
+    font-size: 1.2em;
+    margin: 0 0 5px;
+    color: var(--text-color);
+    font-weight: 600;
+}
+
+.service-description {
+    font-size: 0.95em;
+    color: var(--light-text-color);
+    margin: 0;
+}
+
+.back-link-container {
+    padding: 20px;
+    text-align: center;
+}
+
+/* Reutilizamos los estilos del botón de contacto principal para el botón de volver */
+.back-link {
+    width: 80%; /* Para que sea un botón ancho y fácil de pulsar */
+    margin: 0 auto;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+.back-link:hover {
+    background-color: var(--light-text-color);
+    color: white;
+}
+
+
+/* --- ESTILOS PARA LA VENTANA MODAL DEL QR --- */
+
+/* La Modal (el fondo negro transparente) */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Fija en la pantalla */
+    z-index: 100; /* Asegura que esté por encima de todo */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; 
+    background-color: rgba(0, 0, 0, 0.9); /* Fondo negro con 90% de opacidad */
+}
+
+/* Contenido del Modal (la caja que contiene la imagen) */
+.modal-content {
+    margin: 10% auto; /* 10% desde arriba y centrado horizontalmente */
+    padding: 20px;
+    width: 80%; /* Ancho en pantallas grandes */
+    max-width: 400px; /* Tamaño máximo para el móvil */
+    background-color: white;
+    border-radius: 15px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+/* La imagen del QR dentro del Modal */
+.modal-qr {
+    display: block;
+    width: 90%; /* Ocupa casi todo el ancho del modal */
+    max-width: 350px;
+    height: auto;
+    margin: 20px auto;
+    border: 5px solid var(--card-background); /* Borde blanco alrededor del QR */
+}
+
+/* El botón de cerrar (la X) */
+.close-button {
+    color: #aaa;
+    float: right;
+    font-size: 36px;
+    font-weight: bold;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-button:hover,
+.close-button:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-hint {
+    color: var(--light-text-color);
+    margin-top: 10px;
+    font-size: 0.9em;
+}
+
+/* --- ESTILO PARA BOTÓN DE COMPRA/CONTRATAR --- */
+
+.purchase-button-container {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.purchase-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--secondary-color); /* Usamos el verde (#28a745) para destacar la acción */
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    font-size: 1em;
+    transition: background-color 0.2s, transform 0.2s;
+    border: none; /* Asegura que no tenga borde */
+    cursor: pointer;
+}
+
+.purchase-button:hover {
+    background-color: #1e7e34; /* Un verde más oscuro al pasar el ratón */
+    transform: translateY(-1px);
+}
+
+/* Ajustes para que la modal se vea mejor en móviles */
+@media (max-width: 640px) {
+    .modal-content {
+        margin: 50% auto; /* Un poco más de margen superior */
+        width: 70%;
+    }
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+    .card-container {
+        margin: 20px;
+        border-radius: 10px;
+    }
+    .card-header {
+        padding: 25px 15px;
+        
+    }
+    .name {
+        font-size: 1.7em;
+    }
+    .title {
+        font-size: 1em;
+    }
+    .contact-links, .additional-links {
+        grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+        padding: 15px;
+        gap: 8px;
+    }
+    .contact-item, .additional-item {
+        padding: 12px 8px;
+    }
+    .contact-item i, .additional-item i {
+        font-size: 1.5em;
+    }
+    .contact-item span, .additional-item span {
+        font-size: 0.8em;
+    }
+}
