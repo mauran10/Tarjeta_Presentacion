@@ -1,0 +1,599 @@
+/* ======================================================== */
+/* ESTILOS ESPECÍFICOS PARA LA PÁGINA WEB (mi-web.html) */
+/* ======================================================== */
+
+body {
+    color: var(--main-text-color);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.web-page-container {
+    max-width: 100%;
+    margin: 0 auto;
+
+}
+
+.web-nav  {
+    display: flex;
+    gap: 20px;
+    padding: 10px 30px;
+    align-items: center;
+}
+
+.nav-item {
+    color: white ;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 8px 12px;
+    border-radius: 5px;
+    transition: all 0.9s;
+}
+
+.nav-item:hover {
+    background-color:#211e4b ;
+}
+
+/* ======================================================== */
+/* ESTILOS DE VIDEO DE FONDO Y SECCIÓN HERO PRINCIPAL */
+/* (Con el logo grande y el texto a la izquierda, como en la imagen) */
+/* ======================================================== */
+
+.hero-video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* Ocupa casi toda la altura de la pantalla */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center;
+    overflow: hidden; /* Muy importante para que el video no se salga */
+}
+
+#video-background {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    min-width: 100%;
+    min-height: 100%;
+    width: auto;
+    height: auto;
+    z-index: 0;
+    transform: translate(-50%, -50%);
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6); /* Capa oscura para mejor lectura */
+    z-index: 1;
+}
+
+/* --- HEADER (flota sobre el video) --- */
+.web-header {
+    position: relative; 
+    width: 100%;
+    max-width: 1200px; /* Un poco más ancho si el contenido lo requiere */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px; /* Padding para evitar que se pegue a los bordes */
+    z-index: 2; 
+    background-color: var(--primary-color-dark); /* Color de fondo para el header */
+}
+.web-logo-header-small { 
+    width: 150px;
+    height: auto;
+    filter: brightness(0) invert(1); /* Logo blanco sobre fondo oscuro */
+}
+
+/* --- SECCIÓN HERO CON CONTENIDO (flota sobre el video) --- */
+.web-hero-content {
+    position: relative;
+    width: 100%;
+    max-width: 1200px; /* Mismo ancho que el header para consistencia */
+    flex-grow: 1; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 20px; /* Padding para evitar que se pegue a los bordes */
+    z-index: 2;
+    color: white; /* Todo el texto en esta sección es blanco */
+}
+
+.hero-content-inner { /* Nuevo contenedor para organizar texto y logo */
+    display: flex;
+    flex-direction: column; /* Apilados en móvil */
+    gap: 30px;
+    width: 100%;
+    align-items: center;
+    text-align: center; /* Centrar todo en móvil */
+}
+
+.hero-text-content {
+    padding: 0 10px;
+}
+
+.hero-text-content h1 {
+    font-size: 2.5em; /* Tamaño de texto de bienvenida */
+    margin-bottom: 15px;
+    color: white;
+}
+
+.hero-mission {
+    font-size: 1.1em;
+    margin-bottom: 30px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.hero-large-logo-container {
+    flex-shrink: 0;
+    width: 100%;
+    max-width: 300px; /* Tamaño del logo grande en móvil */
+}
+
+.hero-large-logo {
+    width: 100%;
+    height: auto;
+    filter: brightness(0) invert(1); /* Para que el logo se vea blanco sobre el video */
+    display: block;
+}
+
+.web-button {
+    padding: 12px 25px;
+    font-size: 1em;
+    border: 3px solid transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    background-color: #211e4b;
+    color: white;
+    transition: all 0.7s;
+}
+
+.web-button:hover {
+    border: 3px solid white;
+    
+}
+
+
+/* --- 3 & 4. Secciones de Contenido (Acerca de, Servicios) --- */
+
+/* ======================================================== */
+/* ESTILOS ESPECÍFICOS PARA LA SECCIÓN ACERCA DE NOSOTROS */
+/* ======================================================== */
+/* --- Título de la Sección --- */
+
+.web-section-nosotros {
+    /* Fondo Degradado (Negro a Morado oscuro) */
+    background: linear-gradient(135deg, #0f0f0f 0%, #211e4b 100%); 
+    width: 100%;
+    padding: 60px 0; /* Espacio superior e inferior */
+    color: white; /* Texto principal de la sección blanco */
+    text-align: center;
+}
+
+.section-title-normal {
+    color: white; 
+    font-size: 2em;
+    margin-bottom: 30px;
+    border-bottom: 2px solid var(--primary-color); /* La línea de color primario sigue igual */
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* --- Contenedor del Grid (Dos Columnas/Filas) --- */
+.about-grid-container {
+    display: grid;
+    /* Por defecto, una sola columna en móvil */
+    grid-template-columns: 1fr;
+    gap: 30px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* --- Estilo de cada SECTION (Columna/Fila) --- */
+.about-grid-section {
+    /* Fondo ligeramente transparente para que se vea el degradado */
+    background-color: rgba(255, 255, 255, 0.05); 
+    color: white; /* Texto dentro de la tarjeta blanco */
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    /* Sombra más clara para el fondo oscuro */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5); 
+    transition: transform 0.3s;
+    /* Borde sutil del color primario */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.about-grid-section:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.about-icon {
+    font-size: 3em;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+}
+
+.about-grid-section h3 {
+    color: var(--primary-color); /* El título sigue en color primario para destacar */
+    font-size: 1.4em;
+    margin-bottom: 10px;
+}
+
+.about-grid-section p {
+    color: rgba(255, 255, 255, 0.85); /* Texto grisáceo sutil */
+    line-height: 1.6;
+}
+
+
+/* --- 4. Sección de Servicios - GRID DE COLUMNAS --- */
+/* --- Estilos de Contenedor y Títulos --- */
+
+.web-section {
+    padding: 60px 20px;
+    background-color: whitesmoke; /* Fondo oscuro (azul marino) */
+}
+
+.section-title-servicios {
+    font-size: 2.5em;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 10px;
+    color: #2c2c4a;; /* Título principal claro */
+}
+
+.section-subtitle {
+    text-align: center;
+    margin-bottom: 50px;
+    color: #38385c; /* Subtítulo en un tono más suave */
+    font-size: 1.1em;
+}
+
+/* --- Estilos de la Cuadrícula (Grid) --- */
+
+.service-grid {
+    display: grid;
+    /* Cuadrícula de 3 columnas para escritorio */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Estilos de las Tarjetas (list-item) --- */
+
+.service-card {
+    /* El list-item se convierte en la tarjeta */
+    background-color: #2c2c4a; /* Fondo de tarjeta (azul marino más claro) */
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.4); /* Sombra elegante */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    min-height: 220px; /* Altura mínima para uniformidad */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Efecto Hover (Interacción) */
+.service-card:hover {
+    transform: translateY(-8px); /* Elevación sutil */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.5);
+    background-color: #38385c; /* Ligero cambio de color al pasar el ratón */
+}
+
+/* --- Estilos de Iconos, Títulos y Descripción --- */
+
+.card-icon {
+    font-size: 2.5em;
+    color: white; /* Color de acento morado para los iconos */
+    margin-bottom: 15px;
+}
+
+
+
+.card-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    margin-bottom: 8px;
+}
+
+.card-description {
+    font-size: 0.9em;
+    color: #cccccc;
+    line-height: 1.4;
+}
+
+
+
+/* --- Estilos Generales del Footer --- */
+.main-footer {
+    background-color: #1a1a2e; /* Fondo oscuro (azul marino) */
+    color: #cccccc; /* Texto principal gris claro */
+    padding: 50px 20px 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    /* 3 columnas para escritorio */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.footer-heading {
+    color: #cccccc; /* Títulos en blanco puro */
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    font-weight: 600;
+}
+
+/* --- Estilos de Columnas Individuales (Contacto y Horarios) --- */
+.footer-col p {
+    margin-bottom: 10px;
+    font-size: 0.95em;
+}
+
+.footer-col i {
+    color: white; /* Iconos en morado (color de acento) */
+    margin-right: 10px;
+    width: 20px; /* Ancho fijo para alineación */
+    text-align: center;
+}
+
+/* Horarios específicos */
+.schedule-item {
+    font-weight: bold;
+    color: #cccccc;
+    margin-top: 10px;
+    margin-bottom: 5px !important;
+}
+
+.schedule-time {
+    margin-left: 20px;
+    font-style: italic;
+}
+
+/* --- Estilos de Navegación Rápida --- */
+.footer-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-nav a {
+    color: #cccccc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 5px 0;
+    font-size: 0.95em;
+}
+
+.footer-nav a:hover {
+    color: white; /* Efecto hover con el color de acento morado */
+}
+
+/* --- Estilos de Redes Sociales --- */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+}
+
+.social-links a {
+    color: #e0e0e0;
+    font-size: 1.5em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #9370db; /* Morado en hover */
+}
+
+/* --- Estilos de la Parte Inferior (Copyright) --- */
+.footer-bottom {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: #999999;
+}
+
+
+/* ======================================================== */
+/* MEDIA QUERIES (RESPONSIVE) - ORGANIZADO POR SECCIÓN */
+/* ======================================================== */
+
+
+/* -------------------------------------------------------- */
+/* 1. AJUSTES GLOBALES Y MÓVILES (Max-width: 576px) */
+/* -------------------------------------------------------- */
+@media (max-width: 576px) {
+    /* --- HERO Y CONTENEDOR PRINCIPAL --- */
+
+body, .web-page-container {
+    overflow-x: hidden; /* **CRÍTICO:** Evita la barra de scroll horizontal */
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+    .hero-video-wrapper {
+        height: auto;
+        min-height: 90vh;
+    }
+    .web-hero-content {
+        padding: 20px 15px;
+    }
+    .hero-content-inner {
+        justify-content: center;
+    }
+    .hero-text-content h1 {
+        font-size: 1.8em;
+        line-height: 1.2;
+    }
+    .hero-mission {
+        font-size: 1em;
+        padding: 0 5px;
+    }
+    .hero-large-logo-container {
+        max-width: 250px;
+        margin-top: 20px;
+    }
+
+    /* --- HEADER Y NAVEGACIÓN --- */
+    .web-header {
+        flex-direction: column;
+        padding: 10px 10px 5px;
+    }
+    .web-logo-header-small {
+        width: 120px;
+    }
+    .web-nav {
+       flex-wrap: nowrap; 
+        overflow-x: auto; /* Si no caben, se pueden deslizar */
+        justify-content: center;
+        padding: 10px 0;
+    }
+    .nav-item {
+        font-size: 0.9em; 
+        padding: 6px 10px;
+    }
+    
+    /* --- SECCIÓN ACERCA DE NOSOTROS --- */
+   .about-grid-container {
+    /* Este contenedor debería tener un max-width para no estirarse */
+    max-width: 100%; 
+    margin: 0 auto;
+    }
+    .section-title-normal {
+        font-size: 1.8em;
+    }
+    
+    .about-grid-section {
+    padding: 25px; /* Un padding interno moderado */
+    }
+
+    /* --- SECCIÓN SERVICIOS --- */
+    .service-grid {
+        /* 1 columna para móviles */
+        grid-template-columns: 1fr;
+    }
+
+.web-section-nosotros { 
+    /* Aseguramos que la sección tenga espacio vertical */
+    padding-top: 40px;
+    padding-bottom: 40px;
+}
+
+    .web-section {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    
+    /* --- FOOTER --- */
+    .footer-container {
+        /* 1 columna en móviles */
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+    .footer-col i {
+        margin-right: 5px;
+    }
+    .footer-col p {
+        /* Centrar íconos y texto de contacto */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .schedule-time {
+        margin-left: 0;
+    }
+    .social-links {
+        justify-content: center;
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* 2. TABLETAS (Min-width: 768px) */
+/* -------------------------------------------------------- */
+@media (min-width: 768px) {
+    /* --- HERO/CONTENIDO PRINCIPAL --- */
+    .hero-content-inner {
+        /* Colocar texto y logo en línea, alineados a la izquierda */
+        flex-direction: row; 
+        justify-content: space-between;
+        align-items: center;
+        text-align: left;
+    }
+    .hero-text-content {
+        flex-basis: 55%; 
+        max-width: 55%;
+    }
+    .hero-large-logo-container {
+        flex-basis: 40%; 
+        max-width: 400px;
+    }
+    .hero-text-content h1 {
+        font-size: 3.5em;
+    }
+
+    /* --- SECCIÓN ACERCA DE NOSOTROS --- */
+    .about-grid-container {
+        /* 2 columnas para tabletas */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 40px;
+    }
+    
+    /* --- SECCIÓN SERVICIOS --- */
+    .service-grid {
+        /* 2 columnas para tabletas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* --- FOOTER --- */
+    .footer-container {
+        /* 2 columnas en tabletas */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* 3. ESCRITORIO (Min-width: 992px) */
+/* -------------------------------------------------------- */
+@media (min-width: 992px) {
+    /* --- SECCIÓN SERVICIOS --- */
+    .service-grid {
+        /* 3 columnas para escritorios grandes */
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+
+/* -------------------------------------------------------- */
+/* 4. ESCRITORIO EXTRA GRANDE (Min-width: 1200px) */
+/* -------------------------------------------------------- */
+@media (min-width: 1200px) {
+    /* --- FOOTER --- */
+    /* Vuelve a las 3 columnas en pantallas muy grandes */
+    .footer-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
