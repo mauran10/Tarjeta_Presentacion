@@ -564,8 +564,30 @@ body, .web-page-container {
     /* --- SECCIÓN SERVICIOS --- */
     .service-grid {
         /* 2 columnas para tabletas */
-        grid-template-columns: repeat(2, 1fr);
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 13px;
+        padding: 10px 0px;
+        overflow-x: hidden;display: grid;
     }
+
+
+    .service-card {
+    border-radius: 12px;
+    padding: 0px 10px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 400px;
+    min-height: 10px;
+    background-color: black;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);   
+
+}
 
     /* --- FOOTER --- */
     .footer-container {
