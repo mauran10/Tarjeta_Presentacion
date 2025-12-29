@@ -529,11 +529,7 @@ body, .web-page-container {
     }
 }
 
-
-/* -------------------------------------------------------- */
-/* 2. TABLETAS (Min-width: 768px) */
-/* -------------------------------------------------------- */
-@media (min-width: 768px) {
+@media (max-width: 576px) {
     /* --- HERO/CONTENIDO PRINCIPAL --- */
     .hero-content-inner {
         /* Colocar texto y logo en línea, alineados a la izquierda */
