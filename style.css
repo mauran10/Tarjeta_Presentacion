@@ -10,7 +10,7 @@
 }
 
 body {
-    font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: "Roboto Condensed", sans-serif;
     display: flex;
     justify-content: center;
     align-items: center;
