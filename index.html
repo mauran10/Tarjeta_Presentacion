@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tarjeta de Presentación Virtual</title>
+
+    <meta property="og:title" content="Tarjeta Digital | Jose Luis Zavala Flores">
+    <meta property="og:description" content="Servicio de Contaduria y Asesorias.">
+    <meta property="og:image" content="https://tarjetapresentacionasca.vercel.app/images/logo.png">
+    <meta property="og:url" content="https://tarjetapresentacionasca.vercel.app/">
+    <meta property="og:type" content="website">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <div class="card-container">
         <header class="card-header">
@@ -55,21 +63,22 @@
             </a>
         </section>
 
-       <div class="qr-code" onclick="openQrModal()">
-    <img src="images/qr_asca.png" id="qrImage" alt="Código QR para guardar contacto">
-    <p>Guarda mi contacto</p>
-</div>
+        <div class="qr-code" onclick="openQrModal()">
+            <img src="images/qr_asca.png" id="qrImage" alt="Código QR para guardar contacto">
+            <p>Guarda mi contacto</p>
+        </div>
 
-<div id="qrModal" class="modal">
-    <div class="modal-content">
-        <span class="close-button" onclick="closeQrModal()">&times;</span>
-        
-        <img class="modal-qr" id="modalQrImage" src="images/qr_asca.png" alt="Código QR grande">
-        
-    </div>
-</div>
+        <div id="qrModal" class="modal">
+            <div class="modal-content">
+                <span class="close-button" onclick="closeQrModal()">&times;</span>
+
+                <img class="modal-qr" id="modalQrImage" src="images/qr_asca.png" alt="Código QR grande">
+
+            </div>
+        </div>
     </div>
 
     <script src="script.js"></script>
 </body>
+
 </html>
