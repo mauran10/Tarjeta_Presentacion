@@ -89,15 +89,14 @@ body {
     padding: 15px 20px;
     /* Padding para evitar que se pegue a los bordes */
     z-index: 2;
-    background-color: var(--primary-color-dark);
     /* Color de fondo para el header */
 }
 
 .web-logo-header-small {
     width: 150px;
+    filter: brightness(1.5);
     height: auto;
-    filter: brightness(0) invert(1);
-    /* Logo blanco sobre fondo oscuro */
+   
 }
 
 /* --- SECCIÓN HERO CON CONTENIDO (flota sobre el video) --- */
@@ -142,13 +141,17 @@ body {
 
 .hero-mission {
     font-size: 1.1em;
-    margin-bottom: 30px;
+    margin-bottom: 3em;
+    text-align: justify;
+    padding: 5px 6em;
     color: rgba(255, 255, 255, 0.9);
 }
 
 .hero-large-logo-container {
     flex-shrink: 0;
     width: 100%;
+    filter: brightness(1.5);
+    margin: 0 auto;
     max-width: 300px;
     /* Tamaño del logo grande en móvil */
 }
@@ -156,8 +159,6 @@ body {
 .hero-large-logo {
     width: 100%;
     height: auto;
-    filter: brightness(0) invert(1);
-    /* Para que el logo se vea blanco sobre el video */
     display: block;
 }
 
@@ -264,7 +265,7 @@ body {
 
 .web-section {
     padding: 60px 20px;
-    background-color: whitesmoke;
+    background-color: #aaa;
     /* Fondo oscuro (azul marino) */
 }
 
@@ -272,6 +273,7 @@ body {
     font-size: 2.5em;
     font-weight: 700;
     text-align: center;
+    margin-top: 0px;
     margin-bottom: 10px;
     color: #2c2c4a;
     ;
@@ -287,6 +289,13 @@ body {
 }
 
 /* --- Estilos de la Cuadrícula (Grid) --- */
+
+
+.service-link {
+  text-decoration: none;
+  color: white;
+  display: block;
+}
 
 .service-grid {
     display: grid;

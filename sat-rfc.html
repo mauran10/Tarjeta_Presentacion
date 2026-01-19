@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registros ante el SAT</title>
+    <link rel="stylesheet" href="rfc.css">
+    <link rel="stylesheet" href="web.css">
+</head>
+
+<body>
+    <div class="web-page-container">
+        <header class="web-header">
+            <a href="index.html" class="web-logo-link">
+                <img src="images/logo.png" alt="Logo ASCA" class="web-logo-header-small">
+            </a>
+            <nav class="web-nav">
+                <a href="Web.html" class="nav-item ">Inicio</a>
+                <a href="index.html" class="nav-item ">Mi Tarjeta</a>
+            </nav>
+        </header>
+
+        <section class="tramites-section">
+            <h2>Inicia el trámite</h2>
+            <p class="subtitle">Selecciona el trámite que deseas realizar </p>
+        </section>
+
+        <section class="tramites-grid" id="cards-container">
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Inscripción', 'Aquí puedes iniciar tu proceso de inscripción al RFC para personas físicas.')">
+                <h4>Inscríbete en el RFC</h4>
+            </div>
+
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Actualización', 'Modifica tus actividades económicas o tus obligaciones fiscales vigentes.')">
+                <h4>Actualiza tu actividad económica y obligaciones</h4>
+            </div>
+
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Domicilio', 'Realiza el aviso de cambio de domicilio fiscal de forma interna.')">
+                <h4>Realiza tu cambio de domicilio</h4>
+            </div>
+
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Nombre', 'Solicita la corrección de tus datos personales o cambio de nombre.')">
+                <h4>Corrección o cambio de nombre</h4>
+            </div>
+
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Suspensión', 'Aviso de suspensión de actividades cuando dejes de tener obligaciones.')">
+                <h4>Suspende actividades</h4>
+            </div>
+
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Reanudación', 'Informa al SAT que vuelves a realizar actividades económicas.')">
+                <h4>Reanuda actividades</h4>
+            </div>
+
+            <div class="tramite-card"
+                onclick="mostrarMenu(this, 'Cancelación', 'Proceso para dar de baja definitiva el RFC por liquidación o cierre.')">
+                <h4>Cancelación de tu RFC</h4>
+            </div>
+        </section>
+
+        <div id="info-panel">
+            <h3 id="panel-title">Título del Trámite</h3>
+            <p id="panel-desc">Descripción detallada del trámite seleccionado...</p>
+            <div class="panel-actions">
+                <a id="btn-whatsapp" href="#" class="btn-primary" target="_blank">
+                    <i class="fab fa-whatsapp"></i> Me interesa este trámite
+                </a>
+            </div>
+        </div>
+
+        <a href="web.html" class="back-link">← Volver</a>
+
+        <footer class="main-footer">
+            <div class="footer-container">
+
+                <div class="footer-col footer-nav">
+                    <h4 class="footer-heading">Navegación</h4>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col footer-schedule">
+                    <h4 class="footer-heading">Horarios de Atención</h4>
+                    <p class="schedule-item"><i class="far fa-clock"></i> Lunes - Viernes:</p>
+                    <p class="schedule-time">9:00 am - 6:00 pm</p>
+                    <p class="schedule-item"><i class="far fa-clock"></i> Sábados:</p>
+                    <p class="schedule-time">9:00 am - 1:00 pm</p>
+                </div>
+
+                <div class="footer-col footer-contact">
+                    <h4 class="footer-heading">Contáctanos</h4>
+                    <p><i class="fas fa-map-marker-alt"></i> Dirección de la Oficina Principal</p>
+                    <p><i class="fab fa-whatsapp"></i> 81- 1738- 9761</p>
+                    <p><i class="fab fa-whatsapp"></i> 81- 1738- 7110</p>
+                    <p><i class="fas fa-envelope"></i> asesor@asca-asesoria.com.mx</p>
+
+                    <div class="social-links">
+                        <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; <span id="current-year"></span> ASCA Todos los derechos reservados.</p>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+      function mostrarMenu(elemento, titulo, descripcion) {
+    const panel = document.getElementById('info-panel');
+    const esLaMismaTarjeta = elemento.classList.contains('active');
+
+    // 1. Si el usuario hace clic en la tarjeta que ya está abierta, cerramos el panel
+    if (esLaMismaTarjeta) {
+        panel.classList.remove('panel-open');
+        elemento.classList.remove('active');
+        return; // Salimos de la función para que no se vuelva a abrir
+    }
+
+    // 2. Si es una tarjeta diferente, actualizamos el contenido
+    document.getElementById('panel-title').textContent = titulo;
+    document.getElementById('panel-desc').textContent = descripcion;
+
+    // 3. Configurar WhatsApp
+    const telefono = "8117389761"; 
+    const mensaje = `Hola, me interesa el servicio de: ${titulo}`;
+    const enlaceWA = `https://wa.me/${telefono}?text=${encodeURIComponent(mensaje)}`;
+    document.getElementById('btn-whatsapp').href = enlaceWA;
+
+    // 4. Manejo de clases visuales
+    const tarjetas = document.querySelectorAll('.tramite-card');
+    tarjetas.forEach(t => t.classList.remove('active'));
+    elemento.classList.add('active');
+
+    // 5. Abrir el panel
+    panel.classList.add('panel-open');
+}
+    </script>
+
+</body>
+
+</html>
