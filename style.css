@@ -13,9 +13,10 @@ body {
     font-family: 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     min-height: 100vh;
     margin: 0;
+    padding: 0;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -25,10 +26,9 @@ body {
 
 .card-container {
     width: 100%;
-    max-width: 400px; /* Ancho máximo para una tarjeta en móvil */
+    max-width: 500px; /* Ancho máximo para una tarjeta en móvil */
+    min-height: 100vh;
     background-color: var(--card-background);
-    border-radius: 15px;
-    box-shadow: 0 10px 30px var(--shadow-color);
     overflow: hidden;
     text-align: center;
     padding-bottom: 30px; /* Espacio al final */
@@ -36,11 +36,10 @@ body {
 
 .card-header {
     background-image: url('images/logo_asca.jpg');
-    background-size: 100% 100%;
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     color: white;
-    padding: 30px 20px;
     height: 100px;
     width: 100%;
 }
@@ -56,8 +55,6 @@ body {
 .profile-info {
     padding: 20px 20px;
     background-color: #c2c3c9 ;
-    border-radius: 15px;
-
 }
 
 .name {
@@ -83,7 +80,6 @@ body {
 
 .contact-links {
     background-color: #211e4b;
-    border-radius: 15px;
     margin: 2px 0px 2px 0px;
      display: grid;
     grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* 2 o 3 columnas */
@@ -306,7 +302,6 @@ body {
 /* Responsive adjustments */
 @media (max-width: 640px) {
     .card-container {
-        margin: 20px;
         border-radius: 10px;
     }
     .card-header {
