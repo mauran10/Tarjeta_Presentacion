@@ -573,37 +573,52 @@ body {
     }
 
     /* --- SECCIÓN SERVICIOS --- */
-    .service-grid {
-        /* 2 columnas para tabletas */
+   .service-grid {
         display: grid;
-        grid-template-columns: repeat(2,1fr);
-        gap: 13px;
-        padding: 10px 0px;
-        overflow-x: hidden;
-        display: grid;
+        /* Usamos 2 columnas pero con un ancho mínimo seguro */
+        grid-template-columns: repeat(2, 1fr); 
+        gap: 8px; /* Reducimos el espacio entre cuadros para ganar espacio de texto */
+        padding: 10px 5px;
+        align-items: stretch; 
     }
 
     .service-card {
-        border-radius: 12px;
-        padding: 0px 10px;
-        text-align: center;
-        transition: transform 0.3s ease, box-shadow 0.3s ease;
-        cursor: pointer;
+        padding: 15px 5px; /* Menos espacio interno lateral */
         display: flex;
         flex-direction: column;
+        justify-content: flex-start; /* Alinea contenido arriba */
         align-items: center;
-        max-width: 400px;
-        min-height: 300px;
+        
+        /* CAMBIO CLAVE: Quitamos altura fija y usamos min-height flexible */
+        height: auto; 
+        min-height: 260px; 
+        
         background-color: #2c2c4a;
-        border-radius: 12px;
+        border-radius: 10px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-
+        overflow: hidden; /* Evita que el texto se salga visualmente */
     }
 
     .service-card h3, .card-title {
-        font-size: 0.85em; /* Tamaño de letra ajustado para que quepa en 2 columnas */
+        font-size: 0.75em; /* Reducimos un poco más el tamaño para evitar cortes */
+        line-height: 1.2;
+        margin-top: 10px;
+        margin-bottom: 8px;
+        min-height: 3.6em; /* Mantiene alineados los textos de abajo */
+        font-weight: bold;
     }
     
+    .card-icon {
+        font-size: 1.5em; /* Icono más pequeño para dar más aire al texto */
+        margin-bottom: 5px;
+    }
+
+    .service-card p, .card-description {
+        font-size: 0.7em; /* Texto de descripción más pequeño */
+        line-height: 1.3;
+        margin: 0;
+        color: #e0e0e0;
+    }
     .card-icon{
         font-size: 1.8em;
     }
