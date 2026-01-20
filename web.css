@@ -304,6 +304,7 @@ body {
     gap: 30px;
     max-width: 1200px;
     margin: 0 auto;
+    align-items: stretch;
 }
 
 /* --- Estilos de las Tarjetas (list-item) --- */
@@ -322,8 +323,9 @@ body {
     min-height: 220px;
     /* Altura mínima para uniformidad */
     display: flex;
+    height: 100%;
     flex-direction: column;
-    align-items: center;
+    box-sizing: border-box;
 }
 
 /* Efecto Hover (Interacción) */
@@ -335,13 +337,31 @@ body {
     /* Ligero cambio de color al pasar el ratón */
 }
 
+.service-card h3, .service-card .card-title {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 15px 0 10px 0;
+    min-height: 3em; /* Reserva espacio para 2-3 líneas de título */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card p, .service-card .card-description {
+    font-size: 0.9em;
+    color: #cccccc;
+    line-height: 1.4;
+    flex-grow: 1; /* Esto empuja el contenido para que todas las cajas se vean llenas igual */
+}
+
 /* --- Estilos de Iconos, Títulos y Descripción --- */
 
 .card-icon {
     font-size: 2.5em;
     color: white;
     /* Color de acento morado para los iconos */
-    margin-bottom: 15px;
+    margin-top: 10px;
 }
 
 
@@ -573,7 +593,7 @@ body {
         align-items: center;
         max-width: 400px;
         min-height: 10px;
-        background-color: black;
+        background-color: #2c2c4a;
         border-radius: 12px;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
