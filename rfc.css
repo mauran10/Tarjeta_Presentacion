@@ -16,6 +16,16 @@ body {
     color: #211e4b;
     margin-bottom: 5px;
 }
+.web-header-sat {
+    background-color: #1a1a2e;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    z-index: 2;
+}
 
 /* Fila de tarjetas */
 .tramites-grid {
